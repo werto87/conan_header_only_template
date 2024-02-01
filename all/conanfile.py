@@ -3,7 +3,7 @@ from conan.tools.build import check_min_cppstd
 from conan.tools.cmake import CMake, cmake_layout
 from conan.tools.files import get
 
-
+required_conan_version = ">=1.51.1"
 
 class ConanHeaderOnly(ConanFile):
     name = "lib_name"
