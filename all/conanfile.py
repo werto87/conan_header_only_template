@@ -5,6 +5,7 @@ from conan.tools.files import get
 
 required_conan_version = ">=1.51.1"
 
+
 class ConanHeaderOnly(ConanFile):
     name = "lib_name"
     package_type = "header-library"
@@ -23,12 +24,10 @@ class ConanHeaderOnly(ConanFile):
     def requirements(self):
         self.requires("boost/1.84.0")
 
-
     def layout(self):
-        cmake_layout(self, src_folder=self.name+"-"+str(self.version))
+        cmake_layout(self, src_folder=self.name + "-" + str(self.version))
 
     def package(self):
         cmake = CMake(self)
         cmake.configure()
         cmake.install()
-
